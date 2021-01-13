@@ -1,0 +1,105 @@
+{
+  "name": "@wetrial/blogs",
+  "version": "5.0.0",
+  "author": {
+    "email": "1002275364@qq.com",
+    "name": "xiexingen"
+  },
+  "description": "An out-of-box UI solution for enterprise applications",
+  "scripts": {
+    "analyze": "cross-env ANALYZE=1 umi build",
+    "build": "umi build",
+    "docker:build": "docker-compose -f ./docker/docker-compose.yml build",
+    "docker:push": "npm run docker-hub:build && npm run docker:tag && docker push wetrial/template",
+    "docker:tag": "docker tag template wetrial/template",
+    "fetch:blocks": "pro fetch-blocks --branch antd@4 && npm run prettier",
+    "functions:build": "netlify-lambda build ./lambda",
+    "functions:run": "cross-env NODE_ENV=dev netlify-lambda serve ./lambda",
+    "i18n-remove": "pro i18n-remove --locale=zh-CN --write",
+    "lint": "umi g tmp && npm run lint:js && npm run lint:style && npm run lint:prettier",
+    "lint:prettier": "prettier --check \"src/**/*\" --end-of-line auto",
+    "lint-staged": "lint-staged",
+    "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx ",
+    "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src && npm run lint:style",
+    "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
+    "lint:style": "stylelint --fix \"src/**/*.less\" --syntax less",
+    "prettier": "prettier -c --write \"src/**/*\"",
+    "start": "cross-env REACT_APP_ENV=dev umi dev",
+    "dev": "npm run start:dev",
+    "start:dev": "cross-env REACT_APP_ENV=dev MOCK=none umi dev",
+    "start:no-mock": "cross-env MOCK=none umi dev",
+    "start:no-ui": "cross-env UMI_UI=none umi dev",
+    "start:pre": "cross-env REACT_APP_ENV=pre umi dev",
+    "start:test": "cross-env REACT_APP_ENV=test MOCK=none umi dev",
+    "test": "umi test",
+    "test:all": "node ./tests/run-tests.js",
+    "test:component": "umi test ./src/components",
+    "tsc": "tsc",
+    "ui": "umi ui"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./**/*.less": "stylelint --syntax less",
+    "./**/*.{js,jsx,ts,tsx}": "npm run lint-staged:js"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 10"
+  ],
+  "dependencies": {
+    "@ant-design/pro-form": "^1.13.6",
+    "@ant-design/pro-layout": "^6.10.5",
+    "@wetrial/component": "^4.0.0-beta.3",
+    "@wetrial/core": "^4.0.0-beta.3",
+    "@wetrial/hooks": "^4.0.0-beta.3",
+    "ahooks": "^2.9.3",
+    "antd": "^4.10.0",
+    "classnames": "^2.2.6",
+    "lodash": "^4.17.20",
+    "moment": "^2.29.1",
+    "path-to-regexp": "^6.2.0",
+    "qs": "^6.9.4",
+    "react": "^17.0.1",
+    "react-copy-to-clipboard": "^5.0.2",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "redux": "^4.0.5",
+    "use-merge-value": "^1.0.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.20",
+    "@umijs/fabric": "^2.4.11",
+    "@umijs/preset-react": "^1.7.9",
+    "@umijs/test": "^3.3.4",
+    "chalk": "^4.1.0",
+    "cross-env": "^7.0.3",
+    "cross-port-killer": "^1.3.0",
+    "enzyme": "^3.11.0",
+    "express": "^4.17.1",
+    "husky": "^4.3.7",
+    "jsdom-global": "^3.0.2",
+    "lint-staged": "^10.5.3",
+    "mockjs": "^1.1.0",
+    "prettier": "^2.2.1",
+    "stylelint": "^13.8.0",
+    "typescript": "^4.1.3",
+    "umi": "^3.3.4"
+  },
+  "optionalDependencies": {},
+  "engines": {
+    "node": ">=12.16.3"
+  },
+  "checkFiles": [
+    "src/**/*.js*",
+    "src/**/*.ts*",
+    "src/**/*.less",
+    "config/**/*.js*",
+    "scripts/**/*.js"
+  ],
+  "license": "MIT"
+}
