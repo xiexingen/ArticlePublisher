@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using XXG.ArticlePublisher.EntityFrameworkCore;
+using XXG.ArticlePublisher.MongoDB;
 using XXG.ArticlePublisher.Localization;
 using XXG.ArticlePublisher.MultiTenancy;
 using XXG.ArticlePublisher.Web.Menus;
@@ -42,7 +42,7 @@ namespace XXG.ArticlePublisher.Web
     [DependsOn(
         typeof(ArticlePublisherHttpApiModule),
         typeof(ArticlePublisherApplicationModule),
-        typeof(ArticlePublisherEntityFrameworkCoreDbMigrationsModule),
+        typeof(ArticlePublisherMongoDbModule),
         typeof(AbpAutofacModule),
         typeof(AbpIdentityWebModule),
         typeof(AbpAccountWebIdentityServerModule),

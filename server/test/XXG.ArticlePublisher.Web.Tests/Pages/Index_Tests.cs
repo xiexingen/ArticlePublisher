@@ -4,6 +4,7 @@ using Xunit;
 
 namespace XXG.ArticlePublisher.Pages
 {
+    [Collection(ArticlePublisherTestConsts.CollectionDefinitionName)]
     public class Index_Tests : ArticlePublisherWebTestBase
     {
         [Fact]

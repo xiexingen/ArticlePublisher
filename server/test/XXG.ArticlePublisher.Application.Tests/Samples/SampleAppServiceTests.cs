@@ -10,6 +10,7 @@ namespace XXG.ArticlePublisher.Samples
      * (like IIdentityUserAppService here).
      * Only test your own application services.
      */
+    [Collection(ArticlePublisherTestConsts.CollectionDefinitionName)]
     public class SampleAppServiceTests : ArticlePublisherApplicationTestBase
     {
         private readonly IIdentityUserAppService _userAppService;

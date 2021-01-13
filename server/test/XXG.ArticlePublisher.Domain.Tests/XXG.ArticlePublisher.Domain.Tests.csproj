@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\XXG.ArticlePublisher.EntityFrameworkCore.Tests\XXG.ArticlePublisher.EntityFrameworkCore.Tests.csproj" />
+    <ProjectReference Include="..\XXG.ArticlePublisher.MongoDB.Tests\XXG.ArticlePublisher.MongoDB.Tests.csproj" />
   </ItemGroup>
 
   <ItemGroup>

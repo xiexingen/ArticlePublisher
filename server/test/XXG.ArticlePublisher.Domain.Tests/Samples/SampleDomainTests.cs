@@ -10,6 +10,7 @@ namespace XXG.ArticlePublisher.Samples
      * (like IdentityUserManager here).
      * Only test your own domain services.
      */
+    [Collection(ArticlePublisherTestConsts.CollectionDefinitionName)]
     public class SampleDomainTests : ArticlePublisherDomainTestBase
     {
         private readonly IIdentityUserRepository _identityUserRepository;

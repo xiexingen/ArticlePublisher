@@ -29,7 +29,7 @@
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Autofac" Version="4.1.0" />
     <ProjectReference Include="..\XXG.ArticlePublisher.Application.Contracts\XXG.ArticlePublisher.Application.Contracts.csproj" />
-    <ProjectReference Include="..\XXG.ArticlePublisher.EntityFrameworkCore.DbMigrations\XXG.ArticlePublisher.EntityFrameworkCore.DbMigrations.csproj" />
+    <ProjectReference Include="..\XXG.ArticlePublisher.MongoDB\XXG.ArticlePublisher.MongoDB.csproj" />
   </ItemGroup>
 
 </Project>
